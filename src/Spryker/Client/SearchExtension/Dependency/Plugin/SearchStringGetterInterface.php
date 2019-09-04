@@ -7,17 +7,12 @@
 
 namespace Spryker\Client\SearchExtension\Dependency\Plugin;
 
-interface QueryInterface
+interface SearchStringGetterInterface
 {
     /**
-     * Specification:
-     * - Returns a query object.
-     *
      * @api
      *
-     * @return mixed A query object.
+     * @return string
      */
-    public function getSearchQuery();
+    public function getSearchString();
 }
-
-class_alias(QueryInterface::class, 'Spryker\Client\Search\Dependency\Plugin\QueryInterface', false);
