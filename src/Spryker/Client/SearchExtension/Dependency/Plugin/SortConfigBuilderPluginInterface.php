@@ -9,7 +9,7 @@ namespace Spryker\Client\SearchExtension\Dependency\Plugin;
 
 use Spryker\Client\SearchExtension\Config\SortConfigInterface;
 
-interface SortConfigPluginInterface
+interface SortConfigBuilderPluginInterface extends SearchConfigBuilderPluginInterface
 {
     /**
      * Specification:
@@ -21,5 +21,5 @@ interface SortConfigPluginInterface
      *
      * @return void
      */
-    public function buildSortConfig(SortConfigInterface $sortConfigBuilder);
+    public function buildSortConfig(SortConfigInterface $sortConfigBuilder): void;
 }
