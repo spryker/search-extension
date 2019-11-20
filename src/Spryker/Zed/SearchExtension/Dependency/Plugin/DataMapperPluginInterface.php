@@ -9,9 +9,13 @@ namespace Spryker\Zed\SearchExtension\Dependency\Plugin;
 
 use Generated\Shared\Transfer\DataMappingContextTransfer;
 
-interface SearchDataMapperPluginInterface
+interface DataMapperPluginInterface
 {
     /**
+     * Specification:
+     * - Maps raw data to search data within a given context.
+     * - Returns data in a vendor specific format, that is suitable for search.
+     *
      * @api
      *
      * @param array $data
@@ -22,11 +26,14 @@ interface SearchDataMapperPluginInterface
     public function mapRawDataToSearchData(array $data, DataMappingContextTransfer $dataMappingContextTransfer): array;
 
     /**
+     * Specification:
+     * - Returns true, if a data mapper plugin can be used in a given context.
+     *
      * @api
      *
-     * @param string $resourceType
+     * @param \Generated\Shared\Transfer\DataMappingContextTransfer $dataMappingContextTransfer
      *
      * @return bool
      */
-    public function isApplicable(string $resourceType): bool;
+    public function isApplicable(DataMappingContextTransfer $dataMappingContextTransfer): bool;
 }
